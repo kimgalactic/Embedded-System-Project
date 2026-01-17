@@ -26,6 +26,10 @@ Gate closed when the object was less than 17 cm
 
 
 
-https://github.com/user-attachments/assets/0314720c-5047-41d5-81e7-b8e17002f1ea
+# Implementation on Hardware and video recordings
+
+
+
+https://github.com/user-attachments/assets/b6aa4d4a-9bc3-4c9f-b4f9-ce011eedd7a8
 
 
