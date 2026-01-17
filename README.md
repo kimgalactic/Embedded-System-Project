@@ -23,3 +23,9 @@ Current distance of object from the sensor
 
 Gate closed when the object was less than 17 cm
 <img width="1920" height="925" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/2290219e-6688-4401-ac97-732a26a4dc38" />
+
+
+
+https://github.com/user-attachments/assets/0314720c-5047-41d5-81e7-b8e17002f1ea
+
+
