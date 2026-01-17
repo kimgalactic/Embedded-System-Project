@@ -33,3 +33,9 @@ Gate closed when the object was less than 17 cm
 https://github.com/user-attachments/assets/b6aa4d4a-9bc3-4c9f-b4f9-ce011eedd7a8
 
 
+
+
+
+https://github.com/user-attachments/assets/64f7e95a-a6d6-4579-b71c-166419727426
+
+
