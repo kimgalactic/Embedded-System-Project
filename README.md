@@ -1,45 +1,49 @@
-# Microcontroller-Based Smart Gate Automation System with Password Security
+# 🚪 Smart Gate Automation System
+### Microcontroller-Based Security & Access Control
 
-Project Overview The Problem: Manual gates are often inconvenient to operate and are frequently left open due to human error, compromising security. Furthermore, physical keys can be lost or copied.
+![C](https://img.shields.io/badge/Language-Embedded%20C-blue)
+![Hardware](https://img.shields.io/badge/Hardware-ATmega8%20|%20LCD%20|%20Servo-orange)
+![Simulation](https://img.shields.io/badge/Simulation-Proteus-green)
 
-The Solution: We have developed an automated solution that secures the entry point using digital authentication.
+## 📝 Overview
+This project implements a secure, automated gate control system using an **ATmega8 microcontroller**. It addresses the security risks of manual gates by enforcing digital authentication (PIN) and ensures safety using ultrasonic proximity sensors for auto-closing functionality.
 
-How it Works:
+## 🛠️ Hardware & Tech Stack
+* **Microcontroller:** ATmega8 (AVR Architecture)
+* **Input:** 4x3 Keypad (for PIN entry)
+* **Output:** 16x2 LCD Display (User feedback & masking)
+* **Actuator:** Servo Motor (Gate mechanism simulation)
+* **Sensor:** Ultrasonic Distance Sensor (HC-SR04 equivalent)
+* **Simulation:** Proteus Design Suite
 
-Secure Entry: The user is prompted to enter a 4-digit PIN on the keypad. The LCD provides visual feedback (masking the PIN for security).
+## ⚙️ How It Works
+The system operates as a **Finite State Machine (FSM)** with three main stages:
 
-Intelligent Control: Upon successful entry, the ATmega8 drives a servo motor to open the gate.
+### 1. Secure Authentication
+* User enters a 4-digit PIN via the keypad.
+* The system compares input against stored hash/value.
+* **LCD Feedback:** Displays `*` for each digit to prevent "shoulder surfing."
 
-Smart Closing: Instead of using a simple timer, the system uses an Ultrasonic distance sensor to verify that the vehicle has left the gate area (distance > 17cm) before safely closing the gate. This prevents the gate from closing while a car is still passing through.
+### 2. Intelligent Actuation
+* **If PIN is Correct:** The ATmega8 sends a PWM signal to the Servo Motor, rotating it 90° (Gate Open).
+* **If PIN is Incorrect:** LCD displays "Access Denied" and resets.
 
-Entering pin code
-<img width="1920" height="925" alt="Screenshot (12)" src="https://github.com/user-attachments/assets/dd575094-f902-4a6b-88cf-aca3d801894b" />
+### 3. Safety Auto-Closing
+* Instead of a simple timer, the system uses an **Ultrasonic Sensor**.
+* It continuously monitors the distance of the vehicle.
+* **Logic:** The gate remains open until the vehicle distance > 17cm (indicating the car has fully passed).
+* Once cleared, the Servo rotates back to 0° (Gate Closed).
 
-Gaining access and opening gate
-<img width="1920" height="925" alt="Screenshot (13)" src="https://github.com/user-attachments/assets/55513cd6-90db-4e4b-b69f-a6338e169a2f" />
+## 📂 File Structure
+* `main.c`: The core C code containing the keypad scanning logic, PWM servo control, and sensor interrupt handling.
+* `smart_gate_simulation.pdsprj`: The Proteus project file including the full schematic and wiring.
 
-Current distance of object from the sensor
-<img width="1920" height="925" alt="Screenshot (14)" src="https://github.com/user-attachments/assets/7cfa80e1-ca1a-4a61-8121-03bca33edf5e" />
+## 🚀 Getting Started
+1.  Clone the repository.
+2.  Open the `.pdsprj` file in Proteus 8 (or later).
+3.  Compile `main.c` using AVR-GCC or Microchip Studio to generate the `.hex` file.
+4.  Load the `.hex` file into the ATmega8 component in Proteus.
+5.  Run the simulation.
 
-Gate closed when the object was less than 17 cm
-<img width="1920" height="925" alt="Screenshot (15)" src="https://github.com/user-attachments/assets/2596dcf5-9047-4727-9213-a3db3c19a0c6" />
-
-
-
-# Implementation on Hardware and video recordings
-
-
-
-https://github.com/user-attachments/assets/b6aa4d4a-9bc3-4c9f-b4f9-ce011eedd7a8
-
-
-
-
-
-https://github.com/user-attachments/assets/64f7e95a-a6d6-4579-b71c-166419727426
-
-
-
-https://github.com/user-attachments/assets/08c703ff-dc92-426a-910c-b47dc200122c
-
-
+---
+*Created by [Abdullakim](https://github.com/Abdullakim1)*
