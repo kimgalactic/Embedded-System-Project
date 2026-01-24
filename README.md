@@ -10,6 +10,11 @@ This project implements a secure, automated gate control system using an **ATmeg
 1.  **Authentication:** A 4-digit keypad PIN is required to trigger the opening mechanism.
 2.  **Safety Loop:** An ultrasonic sensor continuously monitors the vehicle's position, ensuring the gate never closes while a vehicle is passing through.
 
+### 🎥 Live Simulation
+[![Watch the simulation video](https://img.youtube.com/vi/rU2VjaAFqDk/0.jpg)](https://www.youtube.com/watch?v=rU2VjaAFqDk)
+
+> **Click the image above** to watch the full Proteus simulation demo on YouTube.
+
 ## ⚙️ System Workflow (Finite State Machine)
 The system operates on a state-machine architecture. Below demonstrates the logic flow during a successful entry cycle.
 
